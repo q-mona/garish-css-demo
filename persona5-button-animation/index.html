@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P5 button animation</title>
+</head>
+
+<body>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .p5-btn {
+            position: relative;
+            margin: 10px 0;
+            display: inline-flex;
+        }
+
+        .p5-btn:hover:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1cfeff;
+            animation: shadowBlue 1s ease-in infinite;
+            z-index: -1;
+        }
+
+        .p5-btn:hover:after {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            mix-blend-mode: screen;
+            background-color: #ff0022;
+            animation: shadowRed 1s ease-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes shadowBlue {
+            0% {
+                top: 6%;
+                transform: skew(-30deg, -2deg) scale(0.7);
+            }
+
+            20% {
+                top: 3%;
+                transform: skew(45deg, 4deg) scale(0.8);
+            }
+
+            40% {
+                top: -2%;
+                transform: skew(-20deg, -2deg) scale(0.9);
+            }
+
+            60% {
+                top: -4%;
+                transform: skew(20deg, 2deg) scale(1);
+            }
+
+            80% {
+                top: 3%;
+                transform: skew(-45deg, -4deg) scale(0.85);
+            }
+
+            100% {
+                top: 6%;
+                transform: skew(45deg, 4deg) scale(0.7);
+            }
+        }
+
+        @keyframes shadowRed {
+            0% {
+                top: -4%;
+                transform: skew(45deg, 4deg) scale(1);
+            }
+
+            20% {
+                top: -1%;
+                transform: skew(-30deg, -3deg) scale(0.9);
+            }
+
+            40% {
+                top: 2%;
+                transform: skew(60deg, 6deg) scale(0.75);
+            }
+
+            60% {
+                top: 3%;
+                transform: skew(-20deg, -2deg) scale(0.7);
+            }
+
+            80% {
+                top: -2%;
+                transform: skew(30deg, 3deg) scale(0.85);
+            }
+
+            100% {
+                top: -4%;
+                transform: skew(45deg, 4deg) scale(1);
+            }
+        }
+    </style>
+
+    <div class="p5-btn">Persona 5</div>
+</body>
+
+</html>
