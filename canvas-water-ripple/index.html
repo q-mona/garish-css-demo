@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Ripple Effect</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+</style>
+
+<body>
+    <canvas></canvas>
+    <script src="./index.js"></script>
+    <script>
+        const canvas = document.querySelector('canvas')
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
+
+        const water_img = new Image()
+        water_img.src = './images/water.png'
+
+        const water_ripple = new WaterRipple({
+            canvas: canvas,
+            background: water_img,
+            resize: true,
+            ripple_radius: 3
+        })
+
+        water_ripple.animate()
+
+        setInterval(()=>{
+            let x = Math.floor(Math.random()*window.innerWidth)
+            let y = Math.floor(Math.random()*window.innerHeight)
+            water_ripple.ripple(x, y)
+        }, 1000)
+
+        water_ripple.addMousemove()
+    </script>
+</body>
+
+</html>
