@@ -4,7 +4,7 @@
 </p>  
 
 # Details
-see [bilibili]()
+see [bilibili](https://www.bilibili.com/video/BV1eg411s7MG/?vd_source=49425bab58362860e5144079a81abf3e)
 
 # Quick Start
 ```
@@ -49,7 +49,7 @@ see [bilibili]()
 ```
 # API
 ## Ripple Attributes
-<table border="1" >
+<table >
 	<tr>
 		<th >Attribute</th>
 		<th >Require</th>
@@ -109,7 +109,7 @@ see [bilibili]()
 </table>
 
 ## Ripple Functions
-<table border="1" >
+<table >
 	<tr>
 		<th >Function</th>
 		<th >Input</th>
