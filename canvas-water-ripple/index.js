@@ -56,7 +56,7 @@ class WaterRipple {
         const len = this.new_img_data.data.length
 
         for (let i = 0; i < len; i += 4) {
-            let buffer_idx = i / 4
+            let buffer_idx = i >> 2
             let x = buffer_idx % w
             let y = (buffer_idx - x) / w
 
@@ -83,7 +83,7 @@ class WaterRipple {
                 offset_y = Math.max(offset_y, 0)
                 offset_y = Math.min(offset_y, h - 1)
 
-                const img_data_idx = ((offset_y * w) + offset_x) * 4
+                const img_data_idx = ((offset_y * w) + offset_x) << 2
                 const r = this.img_data.data[img_data_idx]
                 const g = this.img_data.data[img_data_idx + 1]
                 const b = this.img_data.data[img_data_idx + 2]
