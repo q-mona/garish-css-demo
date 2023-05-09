@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cyberpunk button animation</title>
+
+    <style>
+        :root {
+            --slice-0: inset(50% 50% 50% 50%);
+            --slice-1: inset(80% -6px 0 0);
+            --slice-2: inset(50% -6px 30% 0);
+            --slice-3: inset(10% -6px 85% 0);
+            --slice-4: inset(40% -6px 43% 0);
+            --slice-5: inset(80% -6px 5% 0);
+            --color-blue: #00E6F6;
+            --color-white: #fff;
+            --color-black: #000;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: var(--color-black);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .punk,
+        .punk::after {
+            width: 337px;
+            height: 84px;
+            background: url(./bg.svg) no-repeat center;
+            font-size: 36px;
+            color: var(--color-white);
+            text-align: center;
+            line-height: 84px;
+            /* box-shadow: 3px 0px 0px var(--color-blue); */
+            position: relative;
+        }
+
+        .punk::after {
+            content: 'Cyberpunk';
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6; */
+        }
+
+        .punk:hover::after {
+            animation: 1s glitch ease-in;
+        }
+
+        @keyframes glitch {
+            0% {
+                clip-path: var(--slice-1);
+                transform: translate(-20px, -10px);
+            }
+
+            10% {
+                clip-path: var(--slice-3);
+                transform: translate(10px, 10px);
+            }
+
+            20% {
+                clip-path: var(--slice-1);
+                transform: translate(-10px, 10px);
+            }
+
+            30% {
+                clip-path: var(--slice-3);
+                transform: translate(0px, 5px);
+            }
+
+            40% {
+                clip-path: var(--slice-2);
+                transform: translate(-5px, 0px);
+            }
+
+            50% {
+                clip-path: var(--slice-3);
+                transform: translate(5px, 0px);
+            }
+
+            60% {
+                clip-path: var(--slice-4);
+                transform: translate(5px, 10px);
+            }
+
+            70% {
+                clip-path: var(--slice-2);
+                transform: translate(-10px, 10px);
+            }
+
+            80% {
+                clip-path: var(--slice-5);
+                transform: translate(20px, -10px);
+            }
+
+            90% {
+                clip-path: var(--slice-1);
+                transform: translate(-10px, 0px);
+            }
+
+            100% {
+                clip-path: var(--slice-1);
+                transform: translate(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="punk">
+        Cyberpunk
+    </div>
+</body>
+
+</html>
