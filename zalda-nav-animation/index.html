@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zalda Nav Animation</title>
+
+    <style>
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-ctn {
+            width: 100vw;
+            height: 80px;
+            background: url(./images/black.jpg) center;
+        }
+
+        #nav {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav-ctn">
+        <canvas id="nav"></canvas>
+    </div>
+</body>
+<script src="./index.js"></script>
+<script>
+    const navAnimation = new NavAnimation({
+        canvas: document.querySelector('#nav')
+    })
+
+    let timer = null
+    setInterval(() => {
+        navAnimation.trigger(100 + Math.random() * (window.innerWidth - 200))
+
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+            navAnimation.restore()
+        }, 1000);
+
+    }, 2000)
+
+</script>
+
+</html>
