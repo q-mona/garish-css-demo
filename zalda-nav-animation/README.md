@@ -6,7 +6,7 @@
 # Quick Start
 ```
 <body>
-	<!--canvas dom-->
+    <!--canvas dom-->
     <canvas id="nav"></canvas>
 </body>
 
@@ -74,7 +74,7 @@
 	</tr>
 	<tr>
 		<td>trigger</td>
-		<td>x: Number</td>
+		<td>x: number</td>
 		<td>trigger an animation among [x - 40, x + 40]</td>
 	</tr>
 	<tr>
